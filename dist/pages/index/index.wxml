@@ -1,5 +1,0 @@
-<block wx:if="{{$taroCompReady}}">
-    <view class="index"><text>Hello world!</text>{{anonymousState__temp}}
-        <get-user-info compid="{{$compid__1}}"></get-user-info>
-    </view>
-</block>
