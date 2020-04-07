@@ -1,0 +1,5 @@
+<block wx:if="{{$taroCompReady}}">
+    <block wx:if="{{!authState}}">
+        <button class="login-btn" open-type="getUserInfo" bindgetuserinfo="anonymousFunc0">{{retry ? '重新' : ''}}{{btnText}}</button>
+    </block>
+</block>
