@@ -44,8 +44,8 @@ const DO_STOCK_BASE_INFO = (marketType, stockType) => {
 }
 
 /** 缓存数据 */
-const ON_STOCK_BASE_INFO = res => {
-  console.log(res)
+const ON_STOCK_BASE_INFO = ({ result }) => {
+  Stk.saveAllStkBaseInfo(result)
 }
 
 export default {

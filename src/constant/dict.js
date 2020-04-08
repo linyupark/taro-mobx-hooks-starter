@@ -1,6 +1,7 @@
 export default {
   STK_HISTORY_STORE_NAME: '_STOCK_SEARCH_HISTORY_',
-  STK_ALL_BASE_INFO_LAST_UPDATE: '_STK_LAST_UPDATE_',
+  STK_ALL_CACHE_UPDATE: '_STK_LAST_UPDATE_',
+  STK_ALL_CACHE: '_STK_ALL_CACHE_',
   USER_STORE_BASEINFO: '_USER_INF_',
   USER_STORE_SUB_STOCKS: '_USER_SUB_STOCKS_',
   BIZ_TYPE_NAME: {
@@ -52,32 +53,32 @@ export default {
   },
   CACHE_STKS: [
     // 指数
-    // { marketType: 1, stockType: 4352 },
-    // { marketType: 2, stockType: 4352 },
+    { marketType: 1, stockType: 4352 },
+    { marketType: 2, stockType: 4352 },
     // 上海普通
     { marketType: 1, stockType: 8448 },
-    // // 深证普通
-    // { marketType: 2, stockType: 8448 },
-    // // 创业板股票
-    // { marketType: 2, stockType: 8480 },
-    // // 科创板股票
-    // { marketType: 1, stockType: 8496 },
-    // // B 股
-    // { marketType: 1, stockType: 8704 },
-    // // 基金
-    // { marketType: 1, stockType: 12544 },
-    // // ETF 基金
-    // { marketType: 1, stockType: 12560 },
-    // // LOF 基金
-    // { marketType: 1, stockType: 12576 },
-    // // 债券
-    // { marketType: 1, stockType: 16640 },
-    // // 国债
-    // { marketType: 1, stockType: 16656 },
-    // // 国债逆回购
-    // { marketType: 1, stockType: 16672 },
-    // // 可转债
-    // { marketType: 1, stockType: 16688 },
+    // 深证普通
+    { marketType: 2, stockType: 8448 },
+    // 创业板股票
+    { marketType: 2, stockType: 8480 },
+    // 科创板股票
+    { marketType: 1, stockType: 8496 },
+    // B 股
+    { marketType: 1, stockType: 8704 },
+    // 基金
+    { marketType: 1, stockType: 12544 },
+    // ETF 基金
+    { marketType: 1, stockType: 12560 },
+    // LOF 基金
+    { marketType: 1, stockType: 12576 },
+    // 债券
+    { marketType: 1, stockType: 16640 },
+    // 国债
+    { marketType: 1, stockType: 16656 },
+    // 国债逆回购
+    { marketType: 1, stockType: 16672 },
+    // 可转债
+    { marketType: 1, stockType: 16688 },
   ],
   DEFAULT_SUB_STOCK_LIST: [
     {
