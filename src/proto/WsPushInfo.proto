@@ -1,0 +1,13 @@
+syntax = "proto3";
+package model;
+
+import "google/protobuf/any.proto";
+
+
+// 协议解码返回
+message WsPushInfo {
+    uint32 length = 1; // 消息长度
+    uint32 command = 2; // 消息类型
+    uint32 sequenceId = 3; // 请求序号
+    google.protobuf.Any obj = 4; // 返回结果对象
+}

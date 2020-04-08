@@ -1,0 +1,14 @@
+syntax = "proto3";
+package model;
+
+import "CommonRs.proto";
+import "KLineItem.proto";
+
+
+// 股票快照信息请求返回
+message StockKLineRs {
+    CommonRs commonRs = 1; // 基础请求返回
+    uint32 marketType = 2; // 市场类型
+    string stockId = 3; // 股票代码
+    repeated KLineItem kLines = 4; // K 线
+}

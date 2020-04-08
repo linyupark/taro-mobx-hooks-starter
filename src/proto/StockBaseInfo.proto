@@ -1,0 +1,36 @@
+syntax = "proto3";
+package model;
+
+import "CandleRatio.proto";
+
+// 股票基本信息
+message StockBaseInfo {
+    uint32 marketType = 1; // 市场类型
+    uint32 stockType = 2; // 股票类型
+    string stockId = 3; // 股票代码
+    string cnName = 4; // 中文名
+    string enName = 5; // 英文名
+    repeated string pyName = 6; // 拼音
+    uint32 priceDownLimit = 7; // 跌停价
+    uint32 priceUpLimit = 8; // 涨停价
+    uint32 yesterdayClosePrice = 9; // 昨收
+    uint32 issuePrice = 10; // 发行价格
+    uint32 issueDate = 11; // 发行日期
+    uint32 marginFlag = 12; // 两融标识
+    uint32 totalMins = 13; // 总交易分钟数
+    repeated CandleRatio ratios = 14; // 除权信息
+    bool hasProfit = 15;// 是否盈利 true: 盈利; false: 不盈利
+    bool hasDiffVote = 16; // 投票权是否有差异 true: 有; false: 否
+    uint64 totalShare = 17; // 总股本
+    uint64 flowShare = 18; // 流通股本
+    int32 yesterdayCloseIOPV = 19; // 昨日收盘基金净值
+    uint32 yesterdaySettlePrice = 20; // 昨日结算价格
+    uint32 yesterdayPosition = 21; // 昨日持仓量
+    uint32 futuresType = 22; // 期权类型 1. 欧式 2.美式
+    uint32 fallOrRise = 23; // 看涨或者看跌 1. 看涨 2. 看跌
+    uint32 deliveryDate = 24; // 交割日
+    uint32 expireDate = 25;// 到期日
+    uint32 execDate = 26; // 行权日
+    uint32 execPrice = 27 ; // 行权价格
+    string baseStock = 28; // 关联的基础代码
+}

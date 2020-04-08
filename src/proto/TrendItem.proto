@@ -1,0 +1,13 @@
+syntax = "proto3";
+package model;
+
+// 分时信息
+message TrendItem {
+    int32 lineNo = 1; // 线号
+    uint32 marketTime = 2; // 市场时间
+    uint64 tradeAmount = 3; // 成交量
+    uint64 tradeVal = 4;// 成交额
+    uint32 lastPrice = 5;// 最新价
+    uint32 avgPrice = 6;// 均价
+    uint32 position = 7;// 持仓量
+}

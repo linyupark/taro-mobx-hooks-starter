@@ -1,0 +1,12 @@
+syntax = "proto3";
+package model;
+
+import "GearPrice.proto";
+
+// 股票盘口
+message Bid {
+    uint32 marketType = 1; // 市场类型
+    string stockId = 2; // 股票代码
+    uint32 happenTime = 3; // 交易发生时间
+    repeated GearPrice gearPrices = 4; // 报价档位
+}

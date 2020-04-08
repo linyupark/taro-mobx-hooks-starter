@@ -1,0 +1,12 @@
+syntax = "proto3";
+package model;
+
+// 成交明细
+message TransactionInfo {
+    uint32 marketDate = 1; // 市场日期
+    uint32 marketTime = 2; // 市场时间
+    uint32 lastPrice = 3; //  最新价
+    uint64 amount = 4; // 成交量
+    int32 serialNo = 5; // 序列号
+    bool buyOrSale = 6; // 买或者卖 买: true
+}

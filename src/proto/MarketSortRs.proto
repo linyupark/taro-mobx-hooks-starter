@@ -1,0 +1,16 @@
+syntax = "proto3";
+package model;
+
+import "CommonRs.proto";
+import "SortStockInfo.proto";
+
+
+// 股票排序信息返回
+message MarketSortRs {
+    CommonRs commonRs = 1; // 基础请求
+    uint32 totalSize = 2; // 总记录数
+    uint32 marketType = 3; // 市场类型
+    uint32 stockType = 4; // 股票类型
+    int64 sortFieldId = 5; // 排序域 Id
+    repeated SortStockInfo sortStockInfos = 6; // 排序股票信息
+}

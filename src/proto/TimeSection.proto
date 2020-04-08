@@ -1,0 +1,8 @@
+syntax = "proto3";
+package model;
+
+// 时间段
+message TimeSection {
+    uint32 beginTime = 1; // 交易开始时间
+    uint32 endTime = 2; // 交易结束时间
+}

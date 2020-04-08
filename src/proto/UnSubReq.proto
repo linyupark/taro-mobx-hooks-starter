@@ -1,0 +1,14 @@
+syntax = "proto3";
+package model;
+
+import "CommonReq.proto";
+import "SubMarketInfo.proto";
+import "SubStockInfo.proto";
+
+
+// 股票分时请求
+message UnSubReq {
+    CommonReq commonReq = 1; // 基础请求
+    repeated SubMarketInfo subMarkets = 2; // 订阅市场信息
+    repeated SubStockInfo subStocks =3; // 订阅股票信息
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+package model;
+
+import "CommonRs.proto";
+import "StockKey.proto";
+import "QuotaInfo.proto";
+
+
+// 股票指标请求返回
+message StockQuotaRs {
+    CommonRs commonRs = 1; // 基础请求
+    StockKey stockKeys = 2; //stockKey
+    uint32 decimal = 3; // 小数位数
+    uint32 candleType = 4; // 除权类型
+    uint32 kLineType = 5; // K 线类型
+    uint32 quotaType = 6; // 指标类型
+    repeated QuotaInfo quotas = 7; // 指标结果返回
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+package model;
+
+import "CommonRs.proto";
+
+
+// 服务支持市场返回结果
+message SupportMarketRs {
+    CommonRs commonRs = 1; // 是否成功
+    repeated int32 marketTypes = 2; // 市场类型
+}

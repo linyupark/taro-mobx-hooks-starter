@@ -1,0 +1,8 @@
+syntax = "proto3";
+package model;
+
+// 订阅业务类型
+message SubBizInfo {
+    uint32 bizType = 1; // 业务类型
+    repeated bytes fieldId = 2; // 显示域
+}

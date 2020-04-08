@@ -1,0 +1,11 @@
+syntax = "proto3";
+package model;
+import "TrendItem.proto";
+
+// 分时信息
+message Trend {
+    uint32 marketType = 1; // 市场类型
+    string stockId = 2; // 股票代码
+    uint32 marketDate = 3; // 市场日期
+    repeated TrendItem list = 4; // 分时信息 List
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+package model;
+
+// 股票 key
+message StockKey {
+    uint32 marketType = 1; // 市场类型
+    string stockId = 2; // 股票代码
+    int32 lineNo = 3; // 线号
+}

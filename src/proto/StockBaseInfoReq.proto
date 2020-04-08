@@ -1,0 +1,11 @@
+syntax = "proto3";
+package model;
+
+import "CommonReq.proto";
+
+// 股票基本信息请求
+message StockBaseInfoReq {
+    CommonReq commonReq = 1; // 基础请求
+    uint32 marketType = 2; // 市场类型
+    uint32 stockType = 3; // 股票类型
+}

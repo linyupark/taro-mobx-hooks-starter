@@ -1,0 +1,12 @@
+syntax = "proto3";
+package model;
+
+import "CommonRs.proto";
+import "StockBaseInfo.proto";
+
+
+// 股票基本信息请求返回
+message StockBaseInfoRs {
+    CommonRs commonRs = 1; // 基础请求
+    repeated StockBaseInfo stockBaseInfos = 2; // 股票基本信息列表
+}

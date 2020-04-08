@@ -1,0 +1,13 @@
+syntax = "proto3";
+package model;
+
+// 除权因子
+message CandleRatio {
+    uint32 marketDate = 1; // 用户 uid
+    int32 ratio = 2; // 除权比例
+    string desc = 3; // 除权描述
+    int64 forwardRatio = 4;// 前复权因子
+    int64 backRatio = 5;// 后复权因子
+    int64 forwardConst = 6;// 前复权常量
+    int64 backConst = 7;// 后复权常量
+}

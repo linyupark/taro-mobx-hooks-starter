@@ -1,0 +1,9 @@
+syntax = "proto3";
+package model;
+
+// 版块信息
+message PlateInfo {
+    string plateId = 1; // 版块 id
+    string plateName = 2; // 盘块 name
+    int32 riseRate = 3; // 涨跌幅
+}

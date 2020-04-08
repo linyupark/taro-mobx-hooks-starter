@@ -1,0 +1,10 @@
+syntax = "proto3";
+package model;
+
+import "CommonRs.proto";
+
+// 协议解码返回
+message InitUserRs {
+    CommonRs commonRs = 1; // 标准返回结果
+    uint64 userId= 2; // 初始化未登录的 userId
+}

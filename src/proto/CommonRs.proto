@@ -1,0 +1,12 @@
+syntax = "proto3";
+package model;
+
+
+// 标准返回结果
+message CommonRs {
+    bool success = 1; // 是否成功
+    int32 result_code = 2; // 错误码
+    string desc = 3; // 错误描述
+    string view = 4; // 弹框提示
+    bool alert = 5; // 是否需要弹框
+}

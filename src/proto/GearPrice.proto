@@ -1,0 +1,10 @@
+syntax = "proto3";
+package model;
+
+// 股票盘口档位
+message GearPrice {
+    uint32 buyPrice = 1; // 买价
+    uint32 salePrice = 2; // 卖价
+    uint64 buyAmount = 3; // 买量
+    uint64 saleAmount = 4; // 卖量
+}

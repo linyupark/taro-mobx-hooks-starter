@@ -1,0 +1,12 @@
+syntax = "proto3";
+package model;
+
+import "CommonRs.proto";
+import "Bid.proto";
+
+
+// 股票盘口请求返回
+message StockBidRs {
+    CommonRs commonRs = 1; // 标准应答
+    repeated Bid bids = 2; // 股票盘口返回
+}

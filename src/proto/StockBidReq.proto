@@ -1,0 +1,12 @@
+syntax = "proto3";
+package model;
+
+import "CommonReq.proto";
+import "StockKey.proto";
+
+
+// 股票盘口请求
+message StockBidReq {
+    CommonReq commonReq = 1; // 请求类型
+    repeated StockKey stockKeys = 2; // 股票Key
+}

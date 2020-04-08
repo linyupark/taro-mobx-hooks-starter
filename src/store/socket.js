@@ -1,9 +1,14 @@
 import Taro, { createContext } from '@tarojs/taro'
-import { observable, decorate, action, runInAction, observe } from 'mobx'
+import { observable, decorate, action, observe } from 'mobx'
+import { onRes } from '@/service/pbDataTrans'
+import { blob2buffer } from '@/utils/transform'
+import pbSocketService from '@/service/pbSocket'
+import { NAME_ID as CMD } from '@/constant/cmd'
+
+const CMD_NAME_LIST = Object.keys(CMD)
 
 // 长连接状态管理
 class STKMSocket {
-
   // 连接中
   connected = false
 
@@ -21,7 +26,7 @@ class STKMSocket {
     observe(this, 'connected', change => {
       if (change.oldValue === true && !this.reconnectTimer) {
         this.reconnectTimer = setInterval(() => {
-          this.createTask();
+          this.createTask()
         }, 5000)
       }
     })
@@ -39,8 +44,24 @@ class STKMSocket {
     console.log('socket onopen')
   }
 
-  onMessage(msg) {
-    console.log('socket message:', msg)
+  async onMessage(msg) {
+    let data = msg.data
+    // 小程序会自动 blob 转成 buffer，其他的需要自己转
+    if (Taro.getEnv() !== 'WEAPP') {
+      data = await blob2buffer(data)
+    }
+    let res = onRes(data)
+    CMD_NAME_LIST.forEach(name => {
+      const eventName = `ON_${name}`
+      const handler = pbSocketService[eventName]
+      if (res.command === CMD[name] && res.command != 1001) {
+        console.log(`${eventName}(${res.command})`, res.result)
+      }
+      if (handler && res.command === CMD[name]) {
+        // 有针对指令响应处理函数的直接调用
+        handler(res)
+      }
+    })
   }
 
   // 新建一个连接
@@ -56,7 +77,7 @@ class STKMSocket {
         },
         fail(err) {
           console.error('新 socket 创建失败', err)
-        }
+        },
       }).catch(err => {
         throw new Error(err.message)
       })
@@ -67,14 +88,13 @@ class STKMSocket {
 
       // 连接成功
       this.task.onOpen(this.onOpen)
-      
+
       // 处理消息
       this.task.onMessage(this.onMessage)
     }
 
     return this.task
   }
-
 }
 
 decorate(STKMSocket, {
@@ -82,9 +102,11 @@ decorate(STKMSocket, {
   onErrorClose: action.bound,
   onOpen: action.bound,
   onMessage: action.bound,
-  createTask: action.bound
+  createTask: action.bound,
 })
 
-export default createContext(new STKMSocket())
+const SocketModel = new STKMSocket()
 
+export const SocketContext = createContext(SocketModel)
 
+export default SocketModel

@@ -1,0 +1,16 @@
+syntax = "proto3";
+package model;
+
+import "CommonReq.proto";
+import "StockKey.proto";
+
+
+// 股票快照信息请求
+message StockKLineReq {
+    CommonReq commonReq = 1; // 基础请求
+    StockKey stockKey = 2; //stockKey
+    uint32 startDay = 3;// 开始日期
+    int32 offSetDay = 4;// 偏移天数
+    uint32 candleType = 5;// 除权类型
+    uint32 kLineType = 6;// K 线类型
+}

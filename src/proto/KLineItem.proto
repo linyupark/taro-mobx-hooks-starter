@@ -1,0 +1,18 @@
+syntax = "proto3";
+package model;
+
+// K线单条信息
+message KLineItem {
+    uint32 marketDate = 1; // 市场日期
+    uint32 lowestPrice = 2; // 最低价
+    uint32 highestPrice = 3; // 最高价
+    uint32 openPrice = 4; // 开盘价
+    uint32 closePrice =5; // 收盘价
+    uint64 tradeAmount = 6; // 交易量
+    uint64 tradeVal = 7; // 交易额
+    uint32 exchangeRatio = 8; // 换手率
+    uint32 position = 9; // 持仓量
+    uint32 changePosition =10; // 持仓变化量
+    uint32 settlePrice = 11; // 结算价
+    bytes ext = 12; // 备用字段
+}

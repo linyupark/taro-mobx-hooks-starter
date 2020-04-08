@@ -1,0 +1,12 @@
+syntax = "proto3";
+package model;
+
+import "CommonReq.proto";
+import "StockKey.proto";
+
+// 股票简略信息请求
+message StockBriefReq {
+    CommonReq commonReq = 1; // 基础请求
+    repeated StockKey stockKeys = 2; // 股票类型
+    string wordKeys = 3; // 搜索股票关键词
+}

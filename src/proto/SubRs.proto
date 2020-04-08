@@ -1,0 +1,11 @@
+syntax = "proto3";
+package model;
+
+import "CommonRs.proto";
+
+
+// 股票订阅结果
+message SubRs {
+    CommonRs commonRs = 1; // 基础返回
+    uint32 subId = 2;//订阅号
+}

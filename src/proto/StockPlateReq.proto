@@ -1,0 +1,12 @@
+syntax = "proto3";
+package model;
+
+import "CommonReq.proto";
+
+
+// 股票板块请求
+message StockPlateReq {
+    CommonReq commonReq = 1; // 基础请求
+    int32 plateType = 2; // 板块类型
+    int32 pageSize = 3; //返回个数
+}

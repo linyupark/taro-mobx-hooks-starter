@@ -1,0 +1,14 @@
+syntax = "proto3";
+package model;
+
+import "StockTypeProperty.proto";
+
+// 市场概要信息
+message MarketOverview {
+    uint32 marketType = 1; // 市场类型
+    uint32 marketDate = 2; // 市场日期 yyyyMMdd
+    uint32 marketTime = 3; // 市场时间 HHmm
+    int32 lineNo = 4; // 当前线号
+    uint32 marketStatus = 5; // 市场状态
+    repeated StockTypeProperty typeProperty = 6; // 股票分类属性
+}

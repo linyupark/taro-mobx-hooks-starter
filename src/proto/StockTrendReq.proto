@@ -1,0 +1,14 @@
+syntax = "proto3";
+package model;
+
+import "CommonReq.proto";
+import "StockKey.proto";
+
+
+// 股票分时请求
+message StockTrendReq {
+    CommonReq commonReq = 1; // 基础请求
+    uint32 startDay = 2; // 开始日期
+    int32 offSetDay = 3; // 偏移量
+    repeated StockKey stockKeys = 4; //stockKey
+}

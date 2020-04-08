@@ -1,0 +1,14 @@
+syntax = "proto3";
+package model;
+
+import "CommonRs.proto";
+import "PlateInfo.proto";
+
+
+// 股票板块请求
+message StockPlateRs {
+    CommonRs commonRs = 1; // 基础返回
+    uint32 tradeTime = 2; //  交易时间
+    int32 plateType = 3; // 板块类型
+    repeated PlateInfo plates = 4; // 板块列表
+}

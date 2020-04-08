@@ -1,0 +1,18 @@
+syntax = "proto3";
+package model;
+
+import "TimeSection.proto";
+
+
+// 股票分类属性
+message StockTypeProperty {
+    uint32 type = 1; // 股票类型
+    string name = 2; // 名称
+    uint32 amountPerHand = 3; // 每手股数
+    uint32 decimal = 4; // 小数位数
+    uint32 totalMins = 5; // 总分钟数
+    uint32 offsetMins = 6; // 分类初始线号相对于市场线号偏移
+    repeated TimeSection tradeTimeSection = 7; // 交易时间段
+    repeated TimeSection auctionTimeSection = 8; // 集合竞价时间段
+    uint32 contractUnit = 9; // 合约单位
+}

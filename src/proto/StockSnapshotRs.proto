@@ -1,0 +1,12 @@
+syntax = "proto3";
+package model;
+
+import "CommonRs.proto";
+import "StockSnapshot.proto";
+
+
+// 股票快照请求返回
+message StockSnapshotRs {
+    CommonRs commonRs = 1; // 基础请求
+    repeated StockSnapshot snapshots = 2; // 快照列表返回
+}

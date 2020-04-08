@@ -1,0 +1,15 @@
+syntax = "proto3";
+package model;
+
+import "CommonRs.proto";
+import "TransactionInfo.proto";
+
+
+// 成交明细请求
+message StockTransactionRs {
+    CommonRs commonRs = 1; // 普通请求
+    uint32 totalSize = 2; //  总记录数
+    uint32 marketType = 3; // 市场类型
+    string stockId = 4; // 股票代码
+    repeated TransactionInfo transactions = 5; // 成交明细列表
+}

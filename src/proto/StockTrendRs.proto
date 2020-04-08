@@ -1,0 +1,13 @@
+syntax = "proto3";
+package model;
+
+import "CommonRs.proto";
+import "Trend.proto";
+
+
+// 股票分时请求
+message StockTrendRs {
+    CommonRs commonRs = 1; // 基础返回结果
+    int32 betweenToday = 2; // 距离今天的距离
+    repeated Trend trends = 3; // 分时列表
+}

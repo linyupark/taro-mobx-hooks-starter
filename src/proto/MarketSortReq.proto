@@ -1,0 +1,15 @@
+syntax = "proto3";
+package model;
+
+import "CommonReq.proto";
+
+// 股票排序信息请求
+message MarketSortReq {
+    CommonReq commonReq = 1; // 基础请求
+    uint32 marketType = 2; // 市场类型
+    uint32 stockType = 3; // 股票类型
+    bool ascOrDesc = 4; // 升序降序
+    int64 sortFieldId = 5; // 排序域 Id
+    int32 startSerialNum = 6; // 还是序列号
+    int32 offSet = 7; // 偏移量
+}

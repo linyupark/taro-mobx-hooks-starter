@@ -1,0 +1,9 @@
+syntax = "proto3";
+package model;
+
+// 盘块信息
+message PushMarketInitInfo {
+    uint32 initType = 1; // 初始化类型
+    uint32 marketType = 2; // 市场类型
+    uint32 stockType = 3; // 股票类型
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+package model;
+
+import "CommonRs.proto";
+
+// 协议解码返回
+message ProtoInfoRs {
+    CommonRs commonRs = 1; // 标准返回结果
+    uint32 command = 2; // 消息类型
+    map<uint32, string> msgMap = 3;// 消息 map
+}

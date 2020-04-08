@@ -1,0 +1,13 @@
+syntax = "proto3";
+package model;
+
+// 异动信息推送
+message PushAbnormalInfo {
+    uint32 marketType = 1; // 市场类型
+    string stockId = 2; // 股票代码
+    uint32 time = 3; // 时间
+    uint32 type = 4; // 类型
+    uint32 riseOrFall = 5; // 涨还是跌
+    uint32 timeDiff =6; // 时间间隔
+    uint64 marginVal = 7; // 幅度
+}

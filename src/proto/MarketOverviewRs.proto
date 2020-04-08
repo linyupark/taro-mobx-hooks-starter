@@ -1,0 +1,12 @@
+syntax = "proto3";
+package model;
+
+import "CommonRs.proto";
+import "MarketOverview.proto";
+
+
+//  市场概要信息返回
+message MarketOverviewRs {
+    CommonRs commonRs = 1; // 标准请求
+    MarketOverview marketBaseInfo = 2; // 市场概要信息
+}

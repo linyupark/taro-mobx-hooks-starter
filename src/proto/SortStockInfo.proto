@@ -1,0 +1,14 @@
+syntax = "proto3";
+package model;
+
+
+// 排序股票信息
+message SortStockInfo {
+    int32 serialNo = 1; // 基础返回
+    uint32 marketType = 2; // 市场类型
+    string stockId = 3; // 股票代码
+    int32 tradeState = 4; // 交易状态
+    uint32 lastPrice = 5; // 最新价
+    uint32 yesterdayClosePrice = 6; // 昨天收盘价
+    int64 sortFieldValue = 7; // 排序字段值
+}

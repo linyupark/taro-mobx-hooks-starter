@@ -1,0 +1,14 @@
+syntax = "proto3";
+package model;
+
+import "CommonReq.proto";
+import "StockKey.proto";
+
+
+// 成交明细请求
+message StockTransactionReq {
+    CommonReq commonReq = 1; // 普通请求
+    StockKey stockKey = 2; //  请求key
+    int32 startSerial = 3; // 开始序列号
+    int32 offSet = 4; // 偏移量
+}

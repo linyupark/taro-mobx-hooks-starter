@@ -1,0 +1,17 @@
+syntax = "proto3";
+package model;
+
+//应答包中（MACD指标 IndexOne-DIFF线  IndexTwo-DEA线 IndexThree-MACD线；BOLL指标 IndexOne-上轨线UP  IndexTwo-中轨线MB IndexThree-下轨线DN；
+//KDJ指标 IndexOne-K值  IndexTwo-D值 IndexThree-J值
+
+// 行情指标信息
+message QuotaInfo {
+    int32 serialNo = 1; // 基础返回
+    uint32 marketDate = 2; // 市场类型
+    int32 indexOne = 3; // 指标一
+    int32 indexTwo = 4; // 指标二
+    int32 indexThree = 5; // 指标三
+    int32 indexFour = 6; // 指标四
+    int32 macdEma12 = 7; // 指标五
+    int32 macdEma26 = 8; // 指标六
+}
