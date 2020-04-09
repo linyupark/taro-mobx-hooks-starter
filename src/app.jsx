@@ -10,7 +10,8 @@ import './app.scss'
 //   require('nerv-devtools')
 // }
 
-Socket.createTask('ws://139.224.20.42:1234/gopush/ws')
+// eslint-disable-next-line no-undef
+Socket.createTask(WS_URL.replace(/\"/g, ''))
 
 class App extends Component {
   componentDidMount() {}

@@ -1,14 +1,19 @@
-import Taro, { useContext } from '@tarojs/taro'
+import Taro, { useContext, useEffect } from '@tarojs/taro'
 import { View, Text, Button } from '@tarojs/components'
 // import GetUserInfo from '@/components/weapp/getUserInfo'
 import { observer } from '@tarojs/mobx'
 import Auth from '@/store/auth'
 import { SocketContext } from '@/store/socket'
+import httpStockService from '@/service/httpStock'
 import './index.scss'
 
 function Index() {
   const { weapp } = useContext(Auth)
   const { task, connected } = useContext(SocketContext)
+
+  useEffect(() => {
+    httpStockService.getBaseInfo('上海梅林').then(r => console.log(r))
+  }, [])
 
   return (
     <View className='index'>
