@@ -13,6 +13,12 @@ class User {
     Taro.getStorageSync(DICT.USER_STORE_SUB_STOCKS) ||
       JSON.stringify(DICT.DEFAULT_SUB_STOCK_LIST),
   )
+  
+  /** 订阅的最新快照 */
+  subSnapshotList = []
+  updateSubSnapshotList(snapshotList) {
+    this.subSnapshotList = snapshotList
+  }
 
   /**
    * 绑定用户，先看看本地存储的用户还能不能绑定的上
@@ -56,6 +62,8 @@ class User {
 decorate(User, {
   baseInfo: observable,
   subStockList: observable,
+  subSnapshotList: observable,
+  updateSubSnapshotList: action.bound,
   bind: action.bound,
 })
 

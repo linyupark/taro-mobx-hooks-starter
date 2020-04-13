@@ -82,26 +82,32 @@ export default {
     // // 可转债
     // { marketType: 1, stockType: 16688 },
   ],
+  /** 默认自选股 */
   DEFAULT_SUB_STOCK_LIST: [
     {
       stockId: '000001',
       stockType: 4352,
+      marketType: 1,
     },
     {
       stockId: '399001',
       stockType: 4352,
+      marketType: 2,
     },
     {
       stockId: '600000',
       stockType: 8448,
+      marketType: 1,
     },
     {
       stockId: '000600',
       stockType: 8448,
+      marketType: 2,
     },
     {
       stockId: '512510',
       stockType: 12560,
+      marketType: 1,
     },
   ],
 }
