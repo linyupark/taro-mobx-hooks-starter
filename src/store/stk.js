@@ -20,7 +20,7 @@ class Stk {
 
   constructor() {
     intercept(this, 'cacheSeq', change => {
-      console.log('change', change.newValue)
+      // console.log('change', change.newValue)
       if (change.newValue > 0) {
         Taro.showLoading({
           title: `初始化 ${(

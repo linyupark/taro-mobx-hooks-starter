@@ -1,0 +1,57 @@
+.optional-wrap {
+  .down-green,
+  .up-red {
+    width: 168px;
+    height: 68px;
+    font-size: 36px;
+    color: #fff;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $green;
+  }
+  .up-red {
+    background: $red;
+  }
+}
+
+.columns {
+  width: 100%;
+  box-sizing: border-box;
+  height: 72px;
+  color: $code;
+  font-size: 28px;
+  padding: 0 30px;
+  border-bottom: 1px solid $border;
+  background: #fff;
+  .name {
+    width: 160px;
+  }
+}
+
+.stkList {
+  height: calc(100vh - 180px);
+}
+
+.stkListItem {
+  height: 108px;
+  border-bottom: 1px solid $border;
+  margin-left: 30px;
+  padding-right: 30px;
+  width: calc(100% - 60px);
+  .baseInfo {
+    font-size: 32px;
+    color: $label;
+    line-height: 44px;
+    width: 240px;
+    font-weight: bold;
+    .code {
+      font-size: 28px;
+      color: $code;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+    }
+  }
+}

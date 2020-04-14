@@ -45,6 +45,8 @@ class STKMSocket {
   }
 
   async onMessage(msg) {
+    // 过滤不打印的指令
+    const filterCMD = [1001, 1002];
     let data = msg.data
     // 小程序会自动 blob 转成 buffer，其他的需要自己转
     if (Taro.getEnv() !== 'WEAPP') {
@@ -54,7 +56,7 @@ class STKMSocket {
     CMD_NAME_LIST.forEach(name => {
       const eventName = `ON_${name}`
       const handler = pbSocketService[eventName]
-      if (res.command === CMD[name] && res.command != 1001) {
+      if (res.command === CMD[name] && filterCMD.indexOf(res.command) === -1) {
         console.log(`${eventName}(${res.command})`, res.result)
       }
       if (handler && res.command === CMD[name]) {

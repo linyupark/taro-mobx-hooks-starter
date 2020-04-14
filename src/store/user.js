@@ -1,5 +1,5 @@
 import Taro, { createContext } from '@tarojs/taro'
-import { observable, decorate, action } from 'mobx'
+import { observable, decorate, action, observe } from 'mobx'
 import DICT from '@/constant/dict'
 import pbSocketService from '@/service/pbSocket'
 
@@ -16,9 +16,6 @@ class User {
   
   /** 订阅的最新快照 */
   subSnapshotList = []
-  updateSubSnapshotList(snapshotList) {
-    this.subSnapshotList = snapshotList
-  }
 
   /**
    * 绑定用户，先看看本地存储的用户还能不能绑定的上
@@ -63,7 +60,6 @@ decorate(User, {
   baseInfo: observable,
   subStockList: observable,
   subSnapshotList: observable,
-  updateSubSnapshotList: action.bound,
   bind: action.bound,
 })
 
