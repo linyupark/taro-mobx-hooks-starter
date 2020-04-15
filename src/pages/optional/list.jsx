@@ -40,6 +40,7 @@ function OptionalList() {
 
   // 自选列表发生变化重新获取
   useEffect(() => {
+    console.log('subStockList 改变', subStockList.slice())
     ;(async () => {
       const resp = await httpStockService.getBaseInfo('', subStockList)
       setSubStockDetailList(resp)
@@ -48,6 +49,7 @@ function OptionalList() {
 
   // 订阅
   useEffect(() => {
+    pbSocketService.DO_STOCK_UNSUB(prevStockKeys)
     if (subStockDetailList.length > 0) {
       pbSocketService.DO_STOCK_SUB(stockKeys)
       pbSocketService.DO_STOCK_SNAPSHOT(stockKeys)

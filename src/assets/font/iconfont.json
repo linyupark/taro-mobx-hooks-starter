@@ -1,0 +1,93 @@
+{
+  "id": "1338809",
+  "name": "H5行情",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "10230482",
+      "name": "自选-未选中",
+      "font_class": "zixuan-weixuanzhong",
+      "unicode": "e66a",
+      "unicode_decimal": 58986
+    },
+    {
+      "icon_id": "10230520",
+      "name": "自选-选中",
+      "font_class": "zixuan-xuanzhong",
+      "unicode": "e66b",
+      "unicode_decimal": 58987
+    },
+    {
+      "icon_id": "10230522",
+      "name": "市场-选中",
+      "font_class": "shichang-xuanzhong",
+      "unicode": "e66c",
+      "unicode_decimal": 58988
+    },
+    {
+      "icon_id": "10230691",
+      "name": "市场-未选中",
+      "font_class": "shichang-weixuanzhong",
+      "unicode": "e66e",
+      "unicode_decimal": 58990
+    },
+    {
+      "icon_id": "10230754",
+      "name": "加自选",
+      "font_class": "jiazixuan",
+      "unicode": "e66f",
+      "unicode_decimal": 58991
+    },
+    {
+      "icon_id": "10230761",
+      "name": "添加成功",
+      "font_class": "tianjiachenggong",
+      "unicode": "e670",
+      "unicode_decimal": 58992
+    },
+    {
+      "icon_id": "10230783",
+      "name": "删自选",
+      "font_class": "shanzixuan",
+      "unicode": "e671",
+      "unicode_decimal": 58993
+    },
+    {
+      "icon_id": "10230819",
+      "name": "查找",
+      "font_class": "chazhao",
+      "unicode": "e672",
+      "unicode_decimal": 58994
+    },
+    {
+      "icon_id": "10230820",
+      "name": "清除",
+      "font_class": "qingchu",
+      "unicode": "e673",
+      "unicode_decimal": 58995
+    },
+    {
+      "icon_id": "10230822",
+      "name": "菊花",
+      "font_class": "juhua",
+      "unicode": "e674",
+      "unicode_decimal": 58996
+    },
+    {
+      "icon_id": "10230827",
+      "name": "展开",
+      "font_class": "zhankai",
+      "unicode": "e675",
+      "unicode_decimal": 58997
+    },
+    {
+      "icon_id": "10230914",
+      "name": "更多",
+      "font_class": "gengduo",
+      "unicode": "e676",
+      "unicode_decimal": 58998
+    }
+  ]
+}

@@ -35,6 +35,7 @@ class STKMSocket {
   onErrorClose() {
     this.connected = false
     this.task = null
+    Taro.showToast({ title: '服务器开小差中', icon: 'none' })
     console.log(`socket 断开5秒后重连`)
   }
 

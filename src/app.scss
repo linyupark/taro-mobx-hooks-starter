@@ -1,3 +1,5 @@
+@import './assets/font/iconfont.css';
+
 @import '~taro-ui/dist/style/components/search-bar.scss';
 @import '~taro-ui/dist/style/components/button.scss';
 @import '~taro-ui/dist/style/components/icon.scss';
@@ -15,6 +17,16 @@ $label: #333 !default;
 }
 .up-red {
   color: $red;
+}
+
+.icon-jiazixuan0,
+.icon-jiazixuan1,
+.icon-jiazixuan2 {
+  color: #ff5a54;
+  font-size: 50px;
+}
+.icon-jiazixuan1 {
+  color: $code;
 }
 
 @import './pages/optional/index.scss';

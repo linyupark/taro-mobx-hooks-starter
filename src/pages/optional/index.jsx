@@ -1,5 +1,5 @@
-import Taro, { useState, useMemo } from '@tarojs/taro'
-import { View, Text, ScrollView } from '@tarojs/components'
+import Taro, { useState, useMemo, useEffect } from '@tarojs/taro'
+import { View, ScrollView } from '@tarojs/components'
 import { observer } from '@tarojs/mobx'
 import { AtSearchBar } from 'taro-ui'
 import OptionalList from './list'
@@ -7,6 +7,7 @@ import SearchHistory from './history'
 
 /** 自选股页面 */
 function OptionalPage() {
+
   const [keyword, setKeyword] = useState('')
   const [searchFocus, setSearchFocus] = useState(false)
 
@@ -28,6 +29,7 @@ function OptionalPage() {
   // 搜索框聚焦触发
   const onSearchBarFocus = () => {
     setSearchFocus(true)
+    Taro.eventCenter.trigger('stk.search', '')
   }
   const onSearchBarBlur = () => {
     setSearchFocus(false)
@@ -37,6 +39,19 @@ function OptionalPage() {
   const showOptionalList = useMemo(() => {
     return keyword === '' && !searchFocus
   }, [keyword, searchFocus])
+
+  useEffect(() => {
+    Taro.eventCenter.on('stk.removeHistory', () => {
+      setSearchFocus(true)
+    })
+    Taro.eventCenter.on('stk.toggleOptional', () => {
+      setSearchFocus(true)
+    })
+    return () => {
+      Taro.eventCenter.off('stk.removeHistory')
+      Taro.eventCenter.off('stk.toggleOptional')
+    }
+  }, [])
 
   return (
     <View>
@@ -49,6 +64,7 @@ function OptionalPage() {
         onActionClick={onKeywordSearch}
         onFocus={onSearchBarFocus}
         onBlur={onSearchBarBlur}
+        focus={searchFocus}
       />
       {/* 自选列表 */}
       <View

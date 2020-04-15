@@ -9,9 +9,9 @@ class Request {
   baseURL = 'http://localhost:3005/api'
 
   // 头部信息
-  // header = {
-  //   'content-type': 'application/json'
-  // }
+  header = {
+    'content-type': 'application/json'
+  }
 
   // 发送请求
   send(method, url, data = {}, config = {}) {
@@ -29,7 +29,7 @@ class Request {
         url: config.absURL ? url : `${this.baseURL}${url}`,
         data,
         method,
-        // header: this.header,
+        header: this.header,
         ...config
       }).then(res => {
         if (res.statusCode === 200 || res.statusCode === 201) {
